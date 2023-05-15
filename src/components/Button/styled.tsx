@@ -1,7 +1,10 @@
-import styled from "styled-components";
+import styled, { DefaultTheme, css } from "styled-components";
 import { BtnProps } from ".";
 
+type StyledProps = {
+  theme: DefaultTheme;
+} & BtnProps;
 
-export const Wrapper = styled.button`
-  background-color: blue;
-`
+export const Wrapper = styled.button<StyledProps>`
+  cursor: pointer;
+`;

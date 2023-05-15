@@ -1,19 +1,11 @@
-import * as S from "./styled"
+import * as S from "./styled";
 
 export type BtnProps = {
-  children: any,
+  children: any;
+};
+
+function Button({ children }: BtnProps) {
+  return <S.Wrapper>{children}</S.Wrapper>;
 }
-
-function Button({
-  children,
-}: BtnProps) {
-  return (
-    <S.Wrapper
-
-    >{children}</S.Wrapper>
-  )
-}
-
-
 
 export default Button;
