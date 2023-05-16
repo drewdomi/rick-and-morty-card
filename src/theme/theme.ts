@@ -1,9 +1,10 @@
 export const theme = {
   color: {
-    primary: "#80afff",
-    black: "#212121",
+    black: "#1E1E24",
     white: "e4e4e4",
-    secondary: "#ff5189",
+    primary: "#7209B7",
+    secondary: "#BF1A2F",
+    tertiary: "#018E42",
   },
   font: {
     primary: "Roboto",

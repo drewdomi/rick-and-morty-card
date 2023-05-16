@@ -5,11 +5,12 @@ import Button from "./components/Button";
 
 function App() {
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <ThemeProvider theme={theme} />
-      <Button>Button</Button>
-    </>
+      <Button variant="ghost" color={theme.color.primary}>
+        Button
+      </Button>
+    </ThemeProvider>
   );
 }
 
