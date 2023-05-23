@@ -2,14 +2,21 @@ import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./theme/global";
 import { theme } from "./theme/theme";
 import Button from "./components/Button";
+import Card from "./components/Card";
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Button variant="ghost" color={theme.color.primary}>
+
+      <Button variant="solid" color={theme.color.tertiary}>
         Button
       </Button>
+      <Card
+        title="Rick S"
+        imgUrl="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+        status="Alive"
+      />
     </ThemeProvider>
   );
 }
