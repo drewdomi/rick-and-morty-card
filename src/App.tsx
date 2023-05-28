@@ -3,14 +3,12 @@ import GlobalStyle from "./theme/global";
 import { theme } from "./theme/theme";
 import Button from "./components/Button";
 import Card from "./components/Card";
-import axios from "axios";
+import api from "./services/api";
 
-const apiUrl = "https://rickandmortyapi.com/api/character/1";
-
-axios
-  .get(apiUrl)
-  .then(resp => resp.data)
-  .then(data => console.log(data.name));
+api
+  .get("/1")
+  .then((resp) => resp.data)
+  .then((data) => console.log(data.name));
 
 function App() {
   return (
