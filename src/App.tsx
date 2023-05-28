@@ -6,28 +6,27 @@ import Card from "./components/Card";
 import api from "./services/api";
 import { getRandomNumber } from "./snippets/randomNumber";
 
-const randNum = getRandomNumber(1, 2);
-
-console.log(randNum);
+const randNum = getRandomNumber(1, 826);
 
 api
-  .get("/40")
+  .get(`${randNum}`)
   .then((resp) => resp.data)
-  .then((data) => console.log(data.name));
+  .then((data) => console.log(data));
 
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-
-      <Button variant="solid" color={theme.color.tertiary}>
-        Button
-      </Button>
       <Card
         title="Rick S"
         imgUrl="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
         status="Alive"
-      />
+      >
+        {}
+      </Card>
+      <Button variant="solid" color={theme.color.tertiary}>
+        Button
+      </Button>
     </ThemeProvider>
   );
 }
