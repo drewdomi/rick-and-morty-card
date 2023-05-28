@@ -4,9 +4,14 @@ import { theme } from "./theme/theme";
 import Button from "./components/Button";
 import Card from "./components/Card";
 import api from "./services/api";
+import { getRandomNumber } from "./snippets/randomNumber";
+
+const randNum = getRandomNumber(1, 2);
+
+console.log(randNum);
 
 api
-  .get("/1")
+  .get("/40")
   .then((resp) => resp.data)
   .then((data) => console.log(data.name));
 
