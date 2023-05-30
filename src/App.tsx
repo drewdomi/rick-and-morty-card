@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { ThemeProvider } from "styled-components";
 import GlobalStyle from "./theme/global";
 import { theme } from "./theme/theme";
@@ -6,35 +7,49 @@ import Card from "./components/Card";
 import api from "./services/api";
 import { getRandomNumber } from "./snippets/randomNumber";
 
-const randNum = getRandomNumber(1, 826);
-
-api
-  .get(`${randNum}`)
-  .then((resp) => resp.data)
-  .then((data) => console.log(data));
-
-const handleClick = () => {
-  console.log("hello");
-};
-
 function App() {
+  function getCharacterInfo(id: number) {
+    api
+      .get(`${id.toString()}`)
+      .then((resp) => resp.data)
+      .then((data) => {
+        console.log(data.name);
+        setCharacterImg(data.image);
+        setCharacterName(data.name);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
+  const [characterImg, setCharacterImg] = useState(1);
+  const [characterName, setCharacterName] = useState("Rick");
+
+  const handleClick = () => {
+    const randNum = getRandomNumber(1, 826);
+    console.log(randNum);
+    setCharacterImg(randNum);
+    getCharacterInfo(randNum);
+    console.log(getCharacterInfo(randNum));
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Card
-        title="Rick S"
-        imgUrl={`https://rickandmortyapi.com/api/character/avatar/${randNum}.jpeg`}
+        name={characterName}
+        imgUrl={characterImg.toString()}
         status="Alive"
       >
-        {}
+        {
+          <Button
+            variant="ghost"
+            color={theme.color.secondary}
+            onClick={handleClick}
+          >
+            Random
+          </Button>
+        }
       </Card>
-      <Button
-        variant="solid"
-        color={theme.color.tertiary}
-        onClick={handleClick}
-      >
-        Random
-      </Button>
     </ThemeProvider>
   );
 }
