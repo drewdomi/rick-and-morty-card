@@ -9,42 +9,38 @@ import { getRandomNumber } from "./snippets/randomNumber";
 
 function App() {
   function getCharacterInfo(id: number) {
-    api
+    return api
       .get(`${id.toString()}`)
       .then((resp) => resp.data)
       .then((data) => {
-        console.log(data.name);
         setCharacterImg(data.image);
         setCharacterName(data.name);
+        setCharacterStatus(data.status);
       })
       .catch(function (error) {
         console.log(error);
       });
   }
-  const [characterImg, setCharacterImg] = useState(1);
-  const [characterName, setCharacterName] = useState("Rick");
+  const [characterImg, setCharacterImg] = useState(
+    "https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+  );
+  const [characterName, setCharacterName] = useState("Rick Sanchez");
+  const [characterStatus, setCharacterStatus] = useState("Alive");
 
-  const handleClick = () => {
+  const setCharacterInCard = () => {
     const randNum = getRandomNumber(1, 826);
-    console.log(randNum);
-    setCharacterImg(randNum);
     getCharacterInfo(randNum);
-    console.log(getCharacterInfo(randNum));
   };
 
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
-      <Card
-        name={characterName}
-        imgUrl={characterImg.toString()}
-        status="Alive"
-      >
+      <Card name={characterName} imgUrl={characterImg} status={characterStatus}>
         {
           <Button
             variant="ghost"
             color={theme.color.secondary}
-            onClick={handleClick}
+            onClick={setCharacterInCard}
           >
             Random
           </Button>

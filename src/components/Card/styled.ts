@@ -16,8 +16,13 @@ export const Wrapper = styled.div<StyledCard>`
     margin: 0 auto;
     padding-bottom: 10px;
     img {
+      position: relative;
       border-top-right-radius: 10px;
       border-top-left-radius: 10px;
+    }
+    h1 {
+      margin: 10px;
+      height: 80px;
     }
   `}
 `;
