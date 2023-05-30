@@ -13,19 +13,27 @@ api
   .then((resp) => resp.data)
   .then((data) => console.log(data));
 
+const handleClick = () => {
+  console.log("hello");
+};
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Card
         title="Rick S"
-        imgUrl="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
+        imgUrl={`https://rickandmortyapi.com/api/character/avatar/${randNum}.jpeg`}
         status="Alive"
       >
         {}
       </Card>
-      <Button variant="solid" color={theme.color.tertiary}>
-        Button
+      <Button
+        variant="solid"
+        color={theme.color.tertiary}
+        onClick={handleClick}
+      >
+        Random
       </Button>
     </ThemeProvider>
   );

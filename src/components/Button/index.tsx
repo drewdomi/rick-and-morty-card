@@ -5,6 +5,7 @@ export type BtnProps = {
   variant?: "solid" | "ghost" | "text";
   size?: "small" | "medium" | "large";
   children: any;
+  onClick?: () => void;
 };
 
 function Button({
@@ -12,9 +13,10 @@ function Button({
   variant = "solid",
   size = "medium",
   children,
+  onClick,
 }: BtnProps) {
   return (
-    <S.Wrapper color={color} variant={variant} size={size}>
+    <S.Wrapper color={color} variant={variant} size={size} onClick={onClick}>
       {children}
     </S.Wrapper>
   );
