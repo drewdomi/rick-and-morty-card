@@ -38,7 +38,7 @@ function App() {
       <Card name={characterName} imgUrl={characterImg} status={characterStatus}>
         {
           <Button
-            variant="ghost"
+            variant="solid"
             color={theme.color.secondary}
             onClick={setCharacterInCard}
           >
