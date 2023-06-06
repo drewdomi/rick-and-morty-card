@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
     max-width: 300px;
     text-align: center;
     border-radius: 10px;
-    margin: 0 auto;
+    margin: 50px auto;
     padding-bottom: 10px;
     img {
       position: relative;

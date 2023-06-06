@@ -8,7 +8,7 @@ import api from "./services/api";
 import { getRandomNumber } from "./snippets/randomNumber";
 
 function App() {
-  function getCharacterInfo(id: number) {
+  async function getCharacterInfo(id: number) {
     return api
       .get(`${id.toString()}`)
       .then((resp) => resp.data)
