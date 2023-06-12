@@ -12,7 +12,7 @@ Consiste em um card que quando se clica no botão é gerado um personagem aleato
 - Agora dê o comando `yarn dev` ou `npm run dev` para iniciar o projeto localmente.
 - O projeto estará disponível para acesso apartir de um link mais ou menos assim `http://127.0.0.1:5173/`.
 
-## Tecnologias Usadas
+## 🖥️ Tecnologias Usadas
 
  ![REACT](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)
  ![TYPESCRIPT](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
